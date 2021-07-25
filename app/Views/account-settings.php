@@ -4,7 +4,7 @@
 <?= $this->section('content') ?>
 
 
-<h1>Account settings</h1>
+<h1 class="text-center">Account settings</h1>
 
 
 <?= $this->endSection() ?>
