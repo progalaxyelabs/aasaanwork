@@ -18,31 +18,23 @@ class Auth
 
     private $session;
 
-    private $user;
+    private $customer;
 
     public function __construct()
     {
         $this->db = \Config\Database::connect('default');
         $this->session = \Config\Services::session();
 
-        $this->user = null;
+        $this->customer = null;
 
         if (!empty($_SESSION[SESSION_CUSTOMER_ID_TOKEN])) {
             $customer_id = $_SESSION[SESSION_CUSTOMER_ID_TOKEN];
-
-            $sql = "
-            select 
-                customer_id, 
-                fullname,
-                custom_template_id
-            from customers
-            where customer_id = ?";
-            $row = $this->db->query($sql, [$customer_id])->getRow();
+            $row = $this->db->query(Queries::GetCustomerById, [$customer_id])->getRow();
 
             if (!empty($row)) {
-                $this->user = $row;
+                $this->customer = $row;
             } else {
-                unset($_SESSION[SESSION_CUSTOMER_ID_TOKEN]);    
+                unset($_SESSION[SESSION_CUSTOMER_ID_TOKEN]);
             }
         } else {
             unset($_SESSION[SESSION_CUSTOMER_ID_TOKEN]);
@@ -51,37 +43,37 @@ class Auth
 
     public function isSignedIn()
     {
-        return ($this->user === null) ? false : true;
+        return ($this->customer === null) ? false : true;
     }
 
 
     public function signin(string $signinname, string $password): bool
     {
-        $sql = "
-        select customer_id, 
-            fullname,
-            password,
-            custom_template_id
-        from customers 
-        where signinname = ?";
+        $row = $this->db->query(Queries::GetCustomerBySigninName, [$signinname])->getRow();
 
-        $row = $this->db->query($sql, [$signinname])->getRow();
-        
-        if ($row && $row->password && (password_verify($password, $row->password))) {
-            unset($row->password);
-            $this->user = $row;
+        if ($row && $row->customer_password && (password_verify($password, $row->customer_password))) {
+            unset($row->customer_password);
+            $this->customer = $row;
             $_SESSION[SESSION_CUSTOMER_ID_TOKEN] = $row->customer_id;
             return true;
         }
 
-        $this->user = null;
+        $this->customer = null;
         unset($_SESSION[SESSION_CUSTOMER_ID_TOKEN]);
         return false;
     }
 
     public function signout()
     {
-        $this->user = null;
+        $this->customer = null;
         unset($_SESSION[SESSION_CUSTOMER_ID_TOKEN]);
+    }
+
+    public function getCustomerId() {
+        if($this->customer !== null) {
+            return $this->customer->customer_id;
+        }
+
+        return -1;
     }
 }

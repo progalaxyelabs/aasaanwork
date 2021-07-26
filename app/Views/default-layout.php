@@ -28,7 +28,7 @@ $isSignedIn = $auth->isSignedIn();
 <body>
     <nav class="navbar navbar-light bg-light">
         <div id="nav" class="container-fluid">
-            <a class="navbar-brand" href="https://www.progalaxyelabs.com/">
+            <a class="navbar-brand" href="/">
                 <img id="companyLogo" src="/logo1.png">
                 Aasaan Work
             </a>
@@ -63,8 +63,9 @@ $isSignedIn = $auth->isSignedIn();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- <script src="/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script> -->
 
-    
-    <script src="/modules.1.js"></script>
+    <script src="/http-request.1.js"></script>
+    <script src="/form-controls.1.js"></script>
+    <script src="/modules.1.js"></script>    
     <script src="/loader.1.js"></script>
 </body>
 

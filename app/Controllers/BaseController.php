@@ -70,6 +70,7 @@ class BaseController extends Controller
 		$this->db = \Config\Database::connect('default');
 		$this->session = \Config\Services::session();
 		$this->auth = service('auth');
+		helper('aasaanwork_utils');
 	}
 	
 }

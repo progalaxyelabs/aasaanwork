@@ -9,24 +9,19 @@
     }
 
     function loadModule() {
-        let element = document.querySelector('.module');
+        let element = document.getElementById('page-module');
         if (!element) {
             return;
         }
-        let moduleName = element.getAttribute('data-module');
+        let moduleName = element.getAttribute('data-page-module');
         if (!moduleName) {
             return;
         }
 
-        if (!window['AasaanWorkModules'][moduleName]) {
+        if (!window[moduleName]) {
             return;
         }
-        let module;
-        try {
-            module = new (window['AasaanWorkModules'][moduleName])(element);
-        } catch (ex) {
-            console.log(`error while loading module ${moduleName}`, ex);
-        }
+        window[moduleName].init()
     }
 
 })();
