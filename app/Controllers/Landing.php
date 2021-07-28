@@ -6,7 +6,8 @@ class Landing extends BaseController
 {
 	public function index()
 	{
-		return view('landing');
+		$isSignedIn = $this->auth->isSignedIn();
+		return view('landing', ['isSignedIn' => $isSignedIn]);
 	}
 	
 }
