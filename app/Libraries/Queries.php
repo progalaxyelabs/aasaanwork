@@ -26,7 +26,7 @@ class Queries
         where generic_template_id = ?;
     ";
 
-    const GetGenericScreenByTemplateId = "
+    const GetGenericScreensByTemplateId = "
         select
             gt.generic_template_id,
             gt.generic_template_name,
