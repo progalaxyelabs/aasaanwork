@@ -9,6 +9,8 @@ var httpRequest = function (url, data, headers) {
             }
 
             let response
+            console.log(url,data)
+            console.log(req.response)
             try {
                 response = JSON.parse(req.response)
             } catch (ex) {
@@ -24,6 +26,10 @@ var httpRequest = function (url, data, headers) {
         req.open('POST', url)
         for (const key in headers) { req.setRequestHeader(key, headers[key]) }
         req.setRequestHeader('Content-Type', 'application/json');
+        req.setRequestHeader('X-Requested-With', 'xmlhttprequest');
+        let csrfHeader = 'X-CSRF-TOKEN';
+        let csrfHash = document.querySelector('meta[name="X-CSRF-TOKEN"]').content;
+        req.setRequestHeader(csrfHeader, csrfHash);
         req.send(JSON.stringify(data))
     })
 }

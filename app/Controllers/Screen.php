@@ -6,7 +6,7 @@ use App\Libraries\Queries;
 
 class Screen extends BaseController
 {
-    public function _remap($biz_name, $screen_name)
+    public function _remap($biz_name , $screen_name)
     {
         $customer_bizs = $this->db->query(
             Queries::GetCustomerBizById,

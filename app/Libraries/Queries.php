@@ -127,4 +127,33 @@ class Queries
         from biz_forms
         where biz_screen_id = ?;
     ";
+
+    const GetFormConfigByFormId = "
+        select
+            config
+            from generic_forms
+            where generic_form_id = ?;
+    ";
+
+    const GetBizFormIdByBizFormId = "
+    select 
+            bf.biz_form_id, 
+            bf.biz_form_name,
+            bf.config,
+            bs.biz_screen_id,
+            bs.biz_screen_name,
+            cb.customer_biz_name,
+            cb.customer_biz_id
+        from biz_forms bf
+        join biz_screens bs on bs.biz_screen_id = bf.biz_screen_id
+        join customer_biz cb on cb.customer_biz_id = bs.customer_biz_id
+        where bf.biz_form_id = ?;
+    ";
+
+    const GetGenericFormConfigById = "
+    select 
+        config
+        from generic_forms
+        where generic_form_id = ?;
+    ";
 }
