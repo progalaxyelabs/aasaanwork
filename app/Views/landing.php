@@ -13,7 +13,6 @@
     <!-- MDB -->
     <link rel="stylesheet" href="mdb.min.css" />
     <!-- Custom styles -->
-    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
@@ -55,14 +54,15 @@
                 margin-top: -58.59px;
             }
         }
-
-        .navbar .nav-link {
-            color: #fff !important;
+        @media (max-width: 992px) {
+            nav {
+              background-image: linear-gradient(grey , grey);
+            }
         }
         </style>
 
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+        <nav class="navbar navbar-expand-lg navbar-dark d-lg-block" style="z-index: 2000;">
             <div class="container-fluid">
                 <!-- Navbar brand -->
                 <a class="navbar-brand nav-link" target="_blank" href="">
@@ -386,7 +386,6 @@
     <!-- MDB -->
     <script type="text/javascript" src="mdb.min.js"></script>
     <!-- Custom scripts -->
-    <script type="text/javascript" src="js/script.js"></script>
 </body>
 
 </html>
