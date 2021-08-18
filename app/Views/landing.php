@@ -54,6 +54,7 @@
                 margin-top: -58.59px;
             }
         }
+        /*navbar background color*/
         @media (max-width: 992px) {
             nav {
               background-image: linear-gradient(grey , grey);
@@ -196,7 +197,7 @@
                             eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
                             sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
                         </p>
-                        <p><strong>Doloremque vero ex debitis veritatis?</strong></p>
+                        <p><strong>steps of process</strong></p>
                         <p class="text-muted">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate
                             nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum
@@ -211,7 +212,7 @@
 
             <!--Section: Content-->
             <section class="text-center">
-                <h4 class="mb-5"><strong>Work Confortably</strong></h4>
+                <h4 class="mb-5"><strong>Work Comfortably</strong></h4>
 
                 <div class="row">
                     <div class="col-lg-4 col-md-12 mb-4">
