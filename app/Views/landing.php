@@ -10,8 +10,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
-    <!-- MDB -->
-    <link rel="stylesheet" href="mdb.min.css" />
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- link rel="stylesheet" href="mdb.min.css" / -->
+    <link rel="stylesheet" href="bootstrap.css" />
     <!-- Custom styles -->
 </head>
 
@@ -20,6 +24,16 @@
     <header>
         <style>
         /* Carousel styling */
+        nav {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            /*background: rgba(128,128,128,0.1);*/
+        }
+        .navbar-dark {
+            text-shadow: 0 0 0px #fff, 0 0 50px #000000;
+        }
+        .navbar-link {
+            text-shadow: 0 0 0px #fff, 0 0 50px #000000;
+        }
         #introCarousel,
         .carousel-inner,
         .carousel-item,
@@ -27,22 +41,28 @@
             height: 100vh;
         }
 
-        .carousel-item:nth-child(1) {
-            background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+        .shadow-2-strong {
+            -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .25), 0 5px 15px 2px rgba(0, 0, 0, .2) !important;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .25), 0 5px 15px 2px rgba(0, 0, 0, .2) !important
+        }
+
+        .carousel-item:nth-child(3) {
+            border-top: 59px solid #222222;
+            background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center center;
         }
 
-        .carousel-item:nth-child(2) {
+        .carousel-item:nth-child(1) {
             background-image: url('https://mdbootstrap.com/img/Photos/Others/images/77.jpg');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center center;
         }
 
-        .carousel-item:nth-child(3) {
-            background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg');
+        .carousel-item:nth-child(2) {
+            background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center center;
@@ -54,30 +74,30 @@
                 margin-top: -58.59px;
             }
         }
+
         /*navbar background color*/
         @media (max-width: 992px) {
             nav {
-              background-image: linear-gradient(grey , grey);
+                background-image: linear-gradient(grey, grey);
             }
         }
         </style>
 
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark d-lg-block" style="z-index: 2000;">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="z-index: 2000;">
             <div class="container-fluid">
                 <!-- Navbar brand -->
-                <a class="navbar-brand nav-link" target="_blank" href="">
+                <a class="navbar-brand" href="">
                     <strong>AasaanWork</strong>
                 </a>
-                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-                    data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarExample01"
+                    aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fas fa-bars"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarExample01">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" aria-current="page" href="#intro">Home</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#intro">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="" rel="nofollow" target="_blank">About</a>
@@ -106,70 +126,53 @@
         <!-- Navbar -->
 
         <!-- Carousel wrapper -->
-        <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
+        <div id="introCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-mdb-target="#introCarousel" data-mdb-slide-to="0" class="active"></li>
-                <li data-mdb-target="#introCarousel" data-mdb-slide-to="1"></li>
-                <li data-mdb-target="#introCarousel" data-mdb-slide-to="2"></li>
-            </ol>
-
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#introCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#introCarousel" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#introCarousel" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
             <!-- Inner -->
             <div class="carousel-inner">
                 <!-- Single item -->
                 <div class="carousel-item active">
-                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-                        <div class="d-flex justify-content-center align-items-center h-100">
-                            <div class="text-white text-center">
-                                <h1 class="mb-3">Simplfying business processes</h1>
-                                <h5 class="mb-4">Best & free guide of responsive web design</h5>
-                                <a class="btn btn-outline-light btn-lg m-2"
-                                    href="" role="button" rel="nofollow"
-                                    target="_blank">Start tutorial</a>
-                            </div>
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <div class="text-white text-center">
+                            <h5 class="fs-1 fw-normal">Simplfying business processes</h5>
+                            <h5>Best & free guide of responsive web design</h5>
+                            <a class="btn btn-outline-light btn-lg m-2" href="" role="button" rel="nofollow"
+                                target="_blank">Start tutorial</a>
                         </div>
                     </div>
                 </div>
-
                 <!-- Single item -->
                 <div class="carousel-item">
-                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.3);">
-                        <div class="d-flex justify-content-center align-items-center h-100">
-                            <div class="text-white text-center">
-                                <h2>You can manage your data easily</h2>
-                            </div>
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <div class="text-white text-center">
+                            <h2>You can manage your data easily</h2>
                         </div>
                     </div>
                 </div>
-
                 <!-- Single item -->
                 <div class="carousel-item">
-                    <div class="mask" style="
-                background: linear-gradient(
-                  45deg,
-                  rgba(29, 236, 197, 0.7),
-                  rgba(91, 14, 214, 0.7) 100%
-                );
-              ">
-                        <div class="d-flex justify-content-center align-items-center h-100">
-                            <div class="text-white text-center">
-                                <h2></h2>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             <!-- Inner -->
 
             <!-- Controls -->
-            <a class="carousel-control-prev" href="#introCarousel" role="button" data-mdb-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#introCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#introCarousel" role="button" data-mdb-slide="next">
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#introCarousel" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
         <!-- Carousel wrapper -->
     </header>
@@ -183,7 +186,8 @@
                 <div class="row">
                     <div class="col-md-6 gx-5 mb-4">
                         <div class="bg-image hover-overlay ripple shadow-2-strong" data-mdb-ripple-color="light">
-                            <img src="https://images.unsplash.com/photo-1427751840561-9852520f8ce8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80" class="img-fluid" />
+                            <img src="https://images.unsplash.com/photo-1427751840561-9852520f8ce8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80"
+                                class="img-fluid" />
                             <a href="#!">
                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                             </a>
@@ -218,7 +222,8 @@
                     <div class="col-lg-4 col-md-12 mb-4">
                         <div class="card">
                             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80" class="img-fluid" />
+                                <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
+                                    class="img-fluid" />
                                 <a href="#!">
                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                 </a>
@@ -226,10 +231,11 @@
                             <div class="card-body">
                                 <h5 class="card-title">Convert to digital</h5>
                                 <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk of the
-                                    card's content.
+                                    Digitalization is the use of digital technologies to change a business model and
+                                    provide new revenue and value-producing opportunities. it is the process of moving
+                                    to a digital business.
                                 </p>
-                                <a href="#!" class="btn btn-primary">Button</a>
+                                <a href="#!" class="btn btn-outline-secondary">Visit</a>
                             </div>
                         </div>
                     </div>
@@ -237,7 +243,8 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card">
                             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                <img src="https://images.unsplash.com/photo-1538688273852-e29027c0c176?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80" class="img-fluid" />
+                                <img src="https://images.unsplash.com/photo-1538688273852-e29027c0c176?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
+                                    class="img-fluid" />
                                 <a href="#!">
                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                 </a>
@@ -245,10 +252,11 @@
                             <div class="card-body">
                                 <h5 class="card-title">Work from Anywhere</h5>
                                 <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk of the
-                                    card's content.
+                                    The pandemic has hastened a rise in remote working for knowledge-based
+                                    organizations. Personal technology and digital connectivity had advanced so far and
+                                    so fast that people can find our business.
                                 </p>
-                                <a href="#!" class="btn btn-primary">Button</a>
+                                <a href="#!" class="btn btn-outline-secondary">Visit</a>
                             </div>
                         </div>
                     </div>
@@ -256,7 +264,8 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card">
                             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                <img src="https://images.unsplash.com/photo-1503551723145-6c040742065b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="img-fluid" />
+                                <img src="https://images.unsplash.com/photo-1503551723145-6c040742065b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                    class="img-fluid" />
                                 <a href="#!">
                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                 </a>
@@ -264,10 +273,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">Finding reports</h5>
                                 <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk of the
-                                    card's content.
+                                Reports are auto generated by the UI. All are updated by every second. We provide all necessary information and We have flexible operations. Finally, forget about the reports.
                                 </p>
-                                <a href="#!" class="btn btn-primary">Button</a>
+                                <a href="#!" class="btn btn-outline-secondary">Visit</a>
                             </div>
                         </div>
                     </div>
@@ -315,9 +323,11 @@
                             <!-- Checkbox -->
 
                             <!-- Submit button -->
+                            <div class="text-center">
                             <button type="submit" class="btn btn-primary btn-block mb-4">
                                 Sign up
                             </button>
+                            </div>
 
                             <!-- Register buttons -->
                             <div class="text-center">
@@ -384,8 +394,9 @@
         <!-- Copyright -->
     </footer>
     <!--Footer-->
-    <!-- MDB -->
-    <script type="text/javascript" src="mdb.min.js"></script>
+    <!-- bootstrap -->
+    <script type="text/javascript" src="bootstrap.bundle.js"></script>
+
     <!-- Custom scripts -->
 </body>
 
