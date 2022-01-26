@@ -130,3 +130,5 @@ nb-configuration.xml
 public/uimg/*
 !public/uimg/index.html
 
+composer.lock
+public/.well-known/
